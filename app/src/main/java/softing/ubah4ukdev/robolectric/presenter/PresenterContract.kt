@@ -14,4 +14,7 @@ package softing.ubah4ukdev.robolectric.presenter
  *
  *   v1.0
  */
-interface PresenterContract {}
+interface PresenterContract<ViewContract> {
+    fun onAttach(viewContract: ViewContract)
+    fun onDetach()
+}

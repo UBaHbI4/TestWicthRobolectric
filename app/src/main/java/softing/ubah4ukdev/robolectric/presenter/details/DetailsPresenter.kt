@@ -17,9 +17,10 @@ import softing.ubah4ukdev.robolectric.view.details.ViewDetailsContract
  *   v1.0
  */
 internal class DetailsPresenter internal constructor(
-    private val viewContract: ViewDetailsContract,
     private var count: Int = 0
 ) : PresenterDetailsContract {
+
+    private var viewContract: ViewDetailsContract? = null
 
     override fun setCounter(count: Int) {
         this.count = count
@@ -27,11 +28,19 @@ internal class DetailsPresenter internal constructor(
 
     override fun onIncrement() {
         count++
-        viewContract.setCount(count)
+        viewContract?.setCount(count)
     }
 
     override fun onDecrement() {
         count--
-        viewContract.setCount(count)
+        viewContract?.setCount(count)
+    }
+
+    override fun onAttach(viewContract: ViewDetailsContract) {
+        this.viewContract = viewContract
+    }
+
+    override fun onDetach() {
+        this.viewContract = null
     }
 }

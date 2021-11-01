@@ -1,6 +1,7 @@
 package softing.ubah4ukdev.robolectric.presenter.details
 
 import softing.ubah4ukdev.robolectric.presenter.PresenterContract
+import softing.ubah4ukdev.robolectric.view.details.ViewDetailsContract
 
 /**
  *   Project: Robolectric
@@ -16,7 +17,7 @@ import softing.ubah4ukdev.robolectric.presenter.PresenterContract
  *
  *   v1.0
  */
-internal interface PresenterDetailsContract : PresenterContract {
+internal interface PresenterDetailsContract : PresenterContract<ViewDetailsContract> {
     fun setCounter(count: Int)
     fun onIncrement()
     fun onDecrement()
