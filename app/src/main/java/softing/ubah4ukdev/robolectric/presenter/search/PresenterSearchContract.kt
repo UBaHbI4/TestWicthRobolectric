@@ -1,6 +1,7 @@
 package softing.ubah4ukdev.robolectric.presenter.search
 
 import softing.ubah4ukdev.robolectric.presenter.PresenterContract
+import softing.ubah4ukdev.robolectric.view.search.ViewSearchContract
 
 /**
  *   Project: Robolectric
@@ -16,6 +17,6 @@ import softing.ubah4ukdev.robolectric.presenter.PresenterContract
  *
  *   v1.0
  */
-internal interface PresenterSearchContract : PresenterContract {
+internal interface PresenterSearchContract : PresenterContract<ViewSearchContract> {
     fun searchGitHub(searchQuery: String)
 }
